@@ -1,6 +1,6 @@
-import colors from 'vuetify/es5/util/colors'
+const colors =  require('vuetify/es5/util/colors')
 
-export default {
+module.exports = {
   mode: 'universal',
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_name,
