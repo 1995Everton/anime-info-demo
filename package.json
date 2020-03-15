@@ -1,0 +1,28 @@
+{
+  "name": "anime-info-demo",
+  "version": "1.0.0",
+  "description": "create a practical use for the anime-info library",
+  "author": "1995Everton",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "generate": "nuxt-ts generate",
+    "start": "nuxt-ts start"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "@nuxtjs/axios": "^5.9.5",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "anime-info": "^1.0.0",
+    "nuxt": "^2.0.0",
+    "vue-burger-menu": "^2.0.5",
+    "vue-json-tree-view": "^2.1.6"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.6.0",
+    "@nuxt/typescript-runtime": "^0.4.0",
+    "@nuxtjs/eslint-config-typescript": "^1.0.2",
+    "@nuxtjs/vuetify": "^1.0.0"
+  }
+}
