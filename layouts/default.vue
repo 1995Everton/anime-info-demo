@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-content id="app">
-      <a-slide-menu>
+      <!-- <a-slide-menu>
         <h1 class="a-title">Anime Info</h1>
         <span>Animes</span>
         <a-a
@@ -16,7 +16,7 @@
         <a class="ml-2" href="https://github.com/1995Everton/anime-info" target="_blank"><i class="fab fa-github"></i><span>Repository</span></a>
         <a class="ml-2" href="https://www.npmjs.com/package/anime-info" target="_blank"><i class="fab fa-npm"></i><span>Npm</span></a>
 
-      </a-slide-menu>
+      </a-slide-menu> -->
       
       <v-container>
         <nuxt />

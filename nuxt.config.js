@@ -23,7 +23,7 @@ module.exports = {
   css: [
   ],
   plugins: [ 
-    { src: '~plugins/global-components', ssr: false }
+    // { src: '~plugins/global-components', ssr: false }
   ],
   buildModules: [
     '@nuxtjs/vuetify',
