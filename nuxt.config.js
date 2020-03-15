@@ -34,7 +34,7 @@ export default {
     '@nuxtjs/pwa'
   ],
   axios:{
-    baseURL : "http://localhost:8000/api/"
+    baseURL : "https://dashboard.heroku.com/apps/radiant-waters-14400/api/"
   },
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
