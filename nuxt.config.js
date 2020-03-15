@@ -17,13 +17,14 @@ module.exports = {
   },
   server: {
     port: process.env.PORT || 3000,
+    // port: 3000,
     // host: '0.0.0.0'
   },
   loading: { color: '#fff' },
   css: [
   ],
   plugins: [ 
-    // { src: '~plugins/global-components', ssr: false }
+    { src: '~plugins/global-components', ssr: false }
   ],
   buildModules: [
     '@nuxtjs/vuetify',
@@ -34,7 +35,7 @@ module.exports = {
     '@nuxtjs/pwa'
   ],
   axios:{
-    baseURL : "https://dashboard.heroku.com/apps/radiant-waters-14400/api/",
+    baseURL : "https://anime-info-demo-api.herokuapp.com/api/",
     proxyHeaders: false,
     credentials: false
   },

@@ -429,9 +429,7 @@ export default Vue.extend({
       this.loading = true;
       this.error = false;
       try { 
-        await fetch(`https://dashboard.heroku.com/apps/radiant-waters-14400/api/naruto/${this.select.replace(' ','_')}`)
-        .then( json => json.json())
-        .then( characters => this.character = characters);
+        this.character = await this.$axios.$get<Info>(`naruto/${this.select.replace(' ','_')}`)
       } catch (error) {
         this.error = true;
       }
