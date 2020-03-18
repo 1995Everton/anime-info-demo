@@ -18,7 +18,7 @@ module.exports = {
   },
   server: {
     port: process.env.PORT || 3000,
-    host: process.env.APP_ENV == 'local' ? '0.0.0.0' : 'localhost'
+    // host: process.env.APP_ENV == 'local' ? '0.0.0.0' : 'localhost'
   },
   loading: { color: '#fff' },
   css: [],
