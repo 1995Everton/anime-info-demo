@@ -1,23 +1,26 @@
 <template>
   <v-app>
-    <v-content id="app">
-      <!-- <a-slide-menu>
-        <h1 class="a-title">Anime Info</h1>
-        <span>Animes</span>
-        <a-a
-          class="ml-2" 
-          v-for="anime of animes" 
-          :key="anime.title"
-          :href="anime.href">
-          <img src="https://image.flaticon.com/icons/png/512/1181/1181922.png" height="25">
-          <span v-html="anime.title"></span>
-        </a-a>
-        <span>Documentation</span>
-        <a class="ml-2" href="https://github.com/1995Everton/anime-info" target="_blank"><i class="fab fa-github"></i><span>Repository</span></a>
-        <a class="ml-2" href="https://www.npmjs.com/package/anime-info" target="_blank"><i class="fab fa-npm"></i><span>Npm</span></a>
+    <v-app-bar
+      color="primary"
+      class="px-4"
+      dark
+      max-height="64"
+    >
+      <v-toolbar-title class="title-app">Anime Info</v-toolbar-title>
 
-      </a-slide-menu> -->
-      
+      <v-spacer></v-spacer>
+
+      <v-btn icon class="mx-3" href="https://github.com/1995Everton/anime-info" target="_blank">
+        <i class="fab fa-github icon-app"></i>
+
+      </v-btn>
+
+      <v-btn icon class="mx-3" href="https://www.npmjs.com/package/anime-info" target="_blank">
+        <i class="fab fa-npm icon-app"></i>
+      </v-btn>
+
+    </v-app-bar>
+    <v-content id="app"> 
       <v-container>
         <nuxt />
       </v-container>
@@ -28,14 +31,11 @@
 
 <script lang="ts">
 
-import '@fortawesome/fontawesome-free/css/all.css'
-import '@fortawesome/fontawesome-free/js/all.js'
-
 import Vue from 'vue';
 import AA from '~/components/AA.vue';
 
 interface Data {
-  animes: Anime[]
+  
 }
 
 interface Anime {
@@ -50,23 +50,18 @@ export default Vue.extend({
   },
   data () : Data{
     return {
-      animes: [
-        {
-          href: '/',
-          title: 'Naruto',
-          icon: 'fa fa-user'
-        }
-      ]
+      
     }
   }
 })
 </script>
 
 <style lang="scss" scoped>
-  .a-title {
-    margin-bottom: 4px;
-    font: 39px/1 "Lobster", cursive;
-    text-shadow: 2px 1px 0 #fbfae8, 5px 4px 0 coral;
-    margin: 0;
+  .title-app {
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+  }
+  .icon-app {
+    font-size: 30px;
   }
 </style>

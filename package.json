@@ -1,9 +1,18 @@
 {
   "name": "anime-info-demo",
   "version": "1.0.0",
-  "description": "create a practical use for the anime-info library",
+  "description": "Create a practical use for the anime-info library",
   "author": "1995Everton",
-  "private": true,
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1995Everton/anime-info-demo.git"
+  },
+  "homepage": "https://github.com/1995Everton/anime-info-demo.git#readme",
+  "bugs": {
+    "email": "everton_cardoso@live.com",
+    "url": "https://github.com/1995Everton/anime-info-demo/issues"
+  },
   "scripts": {
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
@@ -17,13 +26,22 @@
     "@nuxtjs/pwa": "^3.0.0-0",
     "anime-info": "^1.0.0",
     "nuxt": "^2.0.0",
-    "vue-burger-menu": "^2.0.5",
     "vue-json-tree-view": "^2.1.6"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.6.0",
     "@nuxt/typescript-runtime": "^0.4.0",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config-typescript": "^1.0.2",
     "@nuxtjs/vuetify": "^1.0.0"
-  }
+  },
+  "keywords": [
+    "anime",
+    "info",
+    "json",
+    "naruto",
+    "demo",
+    "vuejs",
+    "typescript"
+  ]
 }

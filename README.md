@@ -1,26 +1,46 @@
-# anime-info-demo
+<h1 align="center">Welcome to anime-info-demo 👋</h1>
+<p align="left">
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <img src="https://img.shields.io/badge/node->=9.0.0-blue.svg?cacheSeconds=2592000" />
+  <img src="https://img.shields.io/badge/npm->=5.0.0-blue.svg?cacheSeconds=2592000" />
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+</p>
 
-> create a practical use for the anime-info library
+> Create a practical use for the anime-info library
 
-## Build Setup
+### 🏠 [anime-info](https://github.com/1995Everton/anime-info.git#readme)
 
-``` bash
-# install dependencies
-$ npm install
+### ✨ [Demo](https://anime-info-demo.herokuapp.com/)
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## 👉 Instalar Dependências
 
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+```sh
+npm install
+```
+## 🚀 Uso
+```sh
+npm run dev
+```
+### 🐳 Docker (recomendado)
+```sh
+docker-compose up
 ```
 
-ENOSPC: System limit for number of file watchers reached, watch
-echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-https://github.com/nuxt/nuxt.js/issues/6172
+## 🧔Author
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+👤 **1995Everton**
+
+* Github: [@1995Everton](https://github.com/1995Everton)
+* LinkedIn: [@EvertonCardoso](https://www.linkedin.com/in/everton-cardoso-a33556173/)
+
+## 🤝 Contributing
+
+Contribuições, problemas e solicitações de recursos são bem-vindos!<br />Sinta-se livre para verificar [issues page](https://github.com/1995Everton/anime-info-demo/issues). Você também pode dar uma olhada no [contributing guide](https://github.com/1995Everton/anime-info-demo/blob/master/CONTRIBUTING.md).
+
+## Show your support
+
+Dê um ⭐️ se este projeto ajudou você!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

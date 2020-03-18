@@ -1,9 +1,10 @@
-const colors =  require('vuetify/es5/util/colors').default
+const colors =  require('vuetify/es5/util/colors').default;
+require('dotenv').config();
 
 module.exports = {
   mode: 'universal',
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
+    titleTemplate: 'Anime Info',
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
@@ -17,16 +18,15 @@ module.exports = {
   },
   server: {
     port: process.env.PORT || 3000,
-    // port: 3000,
-    // host: '0.0.0.0'
+    host: process.env.APP_ENV == 'local' ? '0.0.0.0' : 'localhost'
   },
   loading: { color: '#fff' },
-  css: [
-  ],
+  css: [],
   plugins: [ 
     { src: '~plugins/global-components', ssr: false }
   ],
   buildModules: [
+    '@nuxtjs/dotenv',
     '@nuxtjs/vuetify',
     '@nuxt/typescript-build'
   ],
@@ -35,9 +35,60 @@ module.exports = {
     '@nuxtjs/pwa'
   ],
   axios:{
-    baseURL : "https://anime-info-demo-api.herokuapp.com/api/",
+    baseURL : process.env.baseURL,
     proxyHeaders: false,
     credentials: false
+  },
+  manifest: {
+    name: "Anime Info",
+    short_name: "Anime Info",
+    theme_color: "#2196f3",
+    background_color: "#2196f3",
+    display: "standalone",
+    Scope: "/",
+    start_url: "/",
+    icons: [
+      {
+        src: "../images/icons/icon-72x72.png",
+        sizes: "72x72",
+        type: "image/png"
+      },
+      {
+        src: "../images/icons/icon-96x96.png",
+        sizes: "96x96",
+        type: "image/png"
+      },
+      {
+        src: "../images/icons/icon-128x128.png",
+        sizes: "128x128",
+        type: "image/png"
+      },
+      {
+        src: "../images/icons/icon-144x144.png",
+        sizes: "144x144",
+        type: "image/png"
+      },
+      {
+        src: "../images/icons/icon-152x152.png",
+        sizes: "152x152",
+        type: "image/png"
+      },
+      {
+        src: "../images/icons/icon-192x192.png",
+        sizes: "192x192",
+        type: "image/png"
+      },
+      {
+        src: "../images/icons/icon-384x384.png",
+        sizes: "384x384",
+        type: "image/png"
+      },
+      {
+        src: "../images/icons/icon-512x512.png",
+        sizes: "512x512",
+        type: "image/png"
+      }
+    ]
   },
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
