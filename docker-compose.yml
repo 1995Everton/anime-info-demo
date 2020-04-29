@@ -2,9 +2,10 @@ version: "3"
 
 services:
     demo:
+        container_name: "demo"
         build: .
-        volumes: 
+        tty: true
+        volumes:
             - .:/usr/app
-            - /usr/app/node_modules
         ports:
             - 3000:3000

@@ -1,98 +1,134 @@
-const colors =  require('vuetify/es5/util/colors').default;
+const colors = require('vuetify/es5/util/colors').default;
 require('dotenv').config();
 
 module.exports = {
-  mode: 'universal',
+  mode: 'spa',
+  /*
+   ** Headers of the page
+   */
   head: {
     titleTemplate: 'Anime Info',
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: process.env.npm_package_description || ''
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet' , href: 'https://fonts.googleapis.com/css?family=Lobster|Gochi+Hand|Rock+Salt|Special+Elite'}
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Lobster|Gochi+Hand|Rock+Salt|Special+Elite'
+      }
     ]
   },
+  /*
+   ** Customize the progress-bar color
+   */
   server: {
     port: process.env.PORT || 3000,
-    host: process.env.APP_ENV == 'local' ? '0.0.0.0' : 'localhost'
+    host: process.env.APP_ENV === 'local' ? '0.0.0.0' : 'localhost'
   },
   loading: { color: '#fff' },
-  css: [],
-  plugins: [ 
-    { src: '~plugins/global-components', ssr: false }
-  ],
+  /*
+   ** Global CSS
+   */
+  css: ['~/assets/reset.scss'],
+  /*
+   ** Plugins to load before mounting the App
+   */
+  plugins: [{ src: '~plugins/global-components', ssr: false }],
+  /*
+   ** Nuxt.js dev-modules
+   */
   buildModules: [
-    '@nuxtjs/dotenv',
-    '@nuxtjs/vuetify',
-    '@nuxt/typescript-build'
+    '@nuxt/typescript-build',
+    // Doc: https://github.com/nuxt-community/stylelint-module
+    '@nuxtjs/stylelint-module',
+    '@nuxtjs/vuetify'
   ],
+  /*
+   ** Nuxt.js modules
+   */
   modules: [
+    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    // Doc: https://github.com/nuxt-community/dotenv-module
+    '@nuxtjs/dotenv'
   ],
-  axios:{
-    baseURL : process.env.baseURL,
+  /*
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
+  axios: {
+    baseURL: process.env.baseURL,
     proxyHeaders: false,
     credentials: false
   },
   manifest: {
-    name: "Anime Info",
-    short_name: "Anime Info",
-    theme_color: "#2196f3",
-    background_color: "#2196f3",
-    display: "standalone",
-    Scope: "/",
-    start_url: "/",
+    name: 'Anime Info',
+    short_name: 'Anime Info',
+    theme_color: '#2196f3',
+    background_color: '#2196f3',
+    display: 'standalone',
+    Scope: '/',
+    start_url: '/',
     icons: [
       {
-        src: "../images/icons/icon-72x72.png",
-        sizes: "72x72",
-        type: "image/png"
+        src: '../images/icons/icon-72x72.png',
+        sizes: '72x72',
+        type: 'image/png'
       },
       {
-        src: "../images/icons/icon-96x96.png",
-        sizes: "96x96",
-        type: "image/png"
+        src: '../images/icons/icon-96x96.png',
+        sizes: '96x96',
+        type: 'image/png'
       },
       {
-        src: "../images/icons/icon-128x128.png",
-        sizes: "128x128",
-        type: "image/png"
+        src: '../images/icons/icon-128x128.png',
+        sizes: '128x128',
+        type: 'image/png'
       },
       {
-        src: "../images/icons/icon-144x144.png",
-        sizes: "144x144",
-        type: "image/png"
+        src: '../images/icons/icon-144x144.png',
+        sizes: '144x144',
+        type: 'image/png'
       },
       {
-        src: "../images/icons/icon-152x152.png",
-        sizes: "152x152",
-        type: "image/png"
+        src: '../images/icons/icon-152x152.png',
+        sizes: '152x152',
+        type: 'image/png'
       },
       {
-        src: "../images/icons/icon-192x192.png",
-        sizes: "192x192",
-        type: "image/png"
+        src: '../images/icons/icon-192x192.png',
+        sizes: '192x192',
+        type: 'image/png'
       },
       {
-        src: "../images/icons/icon-384x384.png",
-        sizes: "384x384",
-        type: "image/png"
+        src: '../images/icons/icon-384x384.png',
+        sizes: '384x384',
+        type: 'image/png'
       },
       {
-        src: "../images/icons/icon-512x512.png",
-        sizes: "512x512",
-        type: "image/png"
+        src: '../images/icons/icon-512x512.png',
+        sizes: '512x512',
+        type: 'image/png'
       }
     ]
   },
+  /*
+   ** vuetify module configuration
+   ** https://github.com/nuxt-community/vuetify-module
+   */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
-    defaultAssets: {icons: 'fa'},
+    defaultAssets: { icons: 'fa' },
     theme: {
       dark: false,
       themes: {
@@ -108,14 +144,13 @@ module.exports = {
       }
     }
   },
+  /*
+   ** Build configuration
+   */
   build: {
-    extend (config, { isDev, isClient }) {
-      if (isClient) {
-        config.node = {
-          fs: 'empty',
-          child_process: 'empty',
-        }
-      }
-    }
+    /*
+     ** You can extend webpack config here
+     */
+    extend() {}
   }
-}
+};

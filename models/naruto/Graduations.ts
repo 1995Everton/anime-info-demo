@@ -1,4 +1,4 @@
 export interface Graduations {
-    title: string,
-    completed: boolean
+  title: string;
+  completed: boolean;
 }

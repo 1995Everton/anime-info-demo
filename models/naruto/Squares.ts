@@ -1,5 +1,4 @@
 export interface Squares {
-    title: string,
-    itens: (string | null)[]
+  title: string;
+  itens: (string | null)[];
 }
-  
