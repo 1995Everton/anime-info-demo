@@ -19,7 +19,7 @@
     "start": "cross-env NODE_ENV=production node server/index.js",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue .",
-    "docker": "docker-compose up && docker exec -it demo /bin/bash",
+    "docker": "docker-compose up -d && docker exec -it demo /bin/bash",
     "heroku-postbuild": "npm run build"
   },
   "lint-staged": {
@@ -57,6 +57,7 @@
     "lint-staged": "^10.0.0",
     "nodemon": "^1.18.9",
     "prettier": "^1.19.1",
-    "stylelint": "^10.1.0"
+    "stylelint": "^10.1.0",
+    "vuex-module-decorators": "^0.17.0"
   }
 }

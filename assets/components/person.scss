@@ -1,0 +1,39 @@
+.person {
+  grid-area: person;
+  margin: 0 0 20px 20px;
+  display: grid;
+  grid-gap: 6px 10px;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, auto);
+  h4 {
+    text-align: center;
+    margin: 0 0 10px;
+    font: 16px/1 'Rock Salt', cursive;
+    &:first-of-type {
+      grid-column: 1 / span 4;
+    }
+  }
+  &__box {
+    border: 2px solid $color-black;
+    grid-column: span 2;
+    padding: 7px 7px 5px;
+  }
+  &__title {
+    font: 4px;
+  }
+  &__amount {
+    font: 19px 'Gochi Hand', cursive;
+    display: inline-block;
+    margin-left: 10px;
+  }
+  .savings {
+    position: relative;
+    grid-column: 1 / span 4;
+    width: 99%;
+    padding: 10px 10px 5px;
+    background: rgba($color-pink, 0.4);
+    box-shadow: 3px 3px 0 0 rgba($color-pink2, 0.7);
+    font: 16px/1 'Rock Salt', cursive;
+  }
+}

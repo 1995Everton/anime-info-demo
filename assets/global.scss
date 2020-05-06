@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+@import url('https://fonts.googleapis.com/css?family=Creepster|Nosifer|Roboto');
+
+* {
+  box-sizing: border-box;
+}
+
+.a-json-return {
+  font: 32px 'Lobster', cursive;
+  margin: 10px 0;
+}
+
+.v-overlay {
+  align-items: start !important;
+}
+
+.nuxt-link {
+  display: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background: #222;
+  font-family: 'Gochi Hand', sans-serif;
+  color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .container-mobile {
+    margin-top: 35px;
+  }
+}

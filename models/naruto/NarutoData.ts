@@ -6,6 +6,5 @@ export interface NarutoData {
   loading: boolean;
   characters: string[];
   character: NarutoInfo;
-  options: any;
   photo_select: number;
 }
