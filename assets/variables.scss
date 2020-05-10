@@ -13,8 +13,8 @@ $color-pink2: #e79598;
 $color-pink3: #db6165;
 
 // Grid Notebook
-$grid-columns: 50% 50%;
-$grid:
+$notebook-grid-columns: 50% 50%;
+$notebook-grid:
 'picture person'
 'picture person'
 'title person'
@@ -23,8 +23,8 @@ $grid:
 'checklist carousel'
 'states carousel';
 
-$grid-columns-mobile: 40% 25% 35%;
-$grid-mobile:
+$notebook-grid-columns-mobile: 40% 25% 35%;
+$notebook-grid-mobile:
 'picture picture picture'
 'title title title'
 'squares squares squares'
