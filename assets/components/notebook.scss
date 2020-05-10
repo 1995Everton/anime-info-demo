@@ -18,13 +18,13 @@
     background-size: 16px 16px;
     display: grid;
     padding: 30px 20px 25px;
-    grid-template-areas: $grid;
-    grid-template-columns: $grid-columns;
+    grid-template-areas: $notebook-grid;
+    grid-template-columns: $notebook-grid-columns;
     grid-template-rows: 18% auto auto auto auto auto;
     @media screen and (max-width: 768px) {
-      grid-template-columns: $grid-columns-mobile;
+      grid-template-columns: $notebook-grid-columns-mobile;
       grid-template-rows: auto;
-      grid-template-areas: $grid-mobile;
+      grid-template-areas: $notebook-grid-mobile;
         > div {
           margin: 30px 20px;
         }
