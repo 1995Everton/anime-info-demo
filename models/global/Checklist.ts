@@ -1,4 +1,4 @@
-export interface Graduations {
+export interface Checklist {
   title: string;
   completed: boolean;
 }

@@ -8,11 +8,13 @@ RUN apt-get update && \
 
 WORKDIR /usr/app
 
-COPY package*.json ./
-
-RUN npm install
+# COPY package*.json ./
 
 COPY . .
+
+RUN yarn install
+
+
 
 EXPOSE 3000
 

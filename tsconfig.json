@@ -14,6 +14,7 @@
     "strict": true,
     "noEmit": true,
     "experimentalDecorators": true,
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
       "~/*": [
@@ -27,7 +28,9 @@
       "@types/node",
       "@nuxt/types",
       "@nuxtjs/axios",
-      "vuetify"
+      "vuetify",
+      "vuex-module-decorators",
+      "nuxt-i18n"
     ]
   },
   "exclude": [

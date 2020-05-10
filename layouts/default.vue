@@ -1,60 +1,24 @@
 <template>
   <v-app>
-    <v-app-bar color="primary" class="px-4" dark max-height="64">
-      <v-toolbar-title class="title-app">Anime Info</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        icon
-        class="mx-3"
-        href="https://github.com/1995Everton/anime-info"
-        target="_blank"
-      >
-        <i class="fab fa-github icon-app"></i>
-      </v-btn>
-
-      <v-btn
-        icon
-        class="mx-3"
-        href="https://www.npmjs.com/package/anime-info"
-        target="_blank"
-      >
-        <i class="fab fa-npm icon-app"></i>
-      </v-btn>
-    </v-app-bar>
+    <a-nav-bar></a-nav-bar>
     <v-content id="app">
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
+    <!-- <a-side-bar></a-side-bar> -->
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-
-interface Data {}
-
-interface Anime {
-  href?: string;
-  title?: string;
-  icon?: string;
-}
+// import ASideBar from '~/components/core/ASidebar.vue';
+import ANavBar from '~/components/core/ANavBar.vue';
 
 export default Vue.extend({
-  data(): Data {
-    return {};
+  components: {
+    // ASideBar,
+    ANavBar
   }
 });
 </script>
-
-<style lang="scss" scoped>
-.title-app {
-  font-family: 'Poppins', sans-serif;
-  font-size: 30px;
-}
-.icon-app {
-  font-size: 30px;
-}
-</style>

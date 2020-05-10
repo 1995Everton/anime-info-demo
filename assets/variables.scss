@@ -2,3 +2,38 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+
+$color-black: #111;
+$color-red: #cc4b48;
+$color-red2: #e4572e;
+$color-vermilion: #f4442e;
+$color-vermilion2: #d05b58;
+$color-pink: #efb8ba;
+$color-pink2: #e79598;
+$color-pink3: #db6165;
+
+// Grid Notebook
+$grid-columns: 50% 50%;
+$grid:
+'picture person'
+'picture person'
+'title person'
+'notes squares'
+'notes squares'
+'checklist carousel'
+'states carousel';
+
+$grid-columns-mobile: 40% 25% 35%;
+$grid-mobile:
+'picture picture picture'
+'title title title'
+'squares squares squares'
+'notes notes notes'
+'person person person'
+'checklist checklist checklist'
+'states states states'
+'carousel carousel carousel';
+
+@mixin text-shadow() {
+  text-shadow: 2px 1px 0 #fbfae8, 5px 4px 0 coral;
+}

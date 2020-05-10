@@ -1,0 +1,21 @@
+{
+  "search": "Search",
+  "input": "Select the character",
+  "error-image": "No image",
+  "json": "Return JSON",
+  "loading": "Loading...",
+  "above": "Above",
+  "graduate": "Graduations",
+  "personal": "Personal information",
+  "weight": "Weight",
+  "height": "Height",
+  "age": "Age",
+  "sex": "Sex",
+  "registration": "Ninja Registration",
+  "status": "Status",
+  "debut": "Debut",
+  "clan": "Clan",
+  "classification": "Classification",
+  "affiliation": "Affiliation",
+  "partner": "Partner"
+}

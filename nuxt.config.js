@@ -30,25 +30,30 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
+  loading: { color: '#fff' },
+  /*
+   ** Server configuration
+   */
   server: {
     port: process.env.PORT || 3000,
     host: process.env.APP_ENV === 'local' ? '0.0.0.0' : 'localhost'
   },
-  loading: { color: '#fff' },
   /*
    ** Global CSS
    */
-  css: ['~/assets/reset.scss'],
+  css: ['~/assets/reset.scss', '~/assets/global.scss'],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~plugins/global-components', ssr: false }],
+  plugins: [
+    { src: '~plugins/treeview.js', ssr: false },
+    { src: '~plugins/global-components', ssr: false }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     '@nuxt/typescript-build',
-    // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify'
   ],
@@ -56,21 +61,36 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    [
+      'nuxt-i18n',
+      {
+        locales: ['pt-br', 'en', 'es'],
+        defaultLocale: 'pt-br',
+        vueI18n: {
+          fallbackLocale: 'pt-br',
+          messages: {
+            en: require('./locales/en.json'),
+            es: require('./locales/es.json'),
+            'pt-br': require('./locales/pt-br.json')
+          }
+        }
+      }
+    ]
   ],
   /*
    ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
    */
   axios: {
     baseURL: process.env.baseURL,
     proxyHeaders: false,
     credentials: false
   },
+  /*
+   ** Pwa module configuration
+   */
   manifest: {
     name: 'Anime Info',
     short_name: 'Anime Info',
@@ -124,7 +144,6 @@ module.exports = {
   },
   /*
    ** vuetify module configuration
-   ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
@@ -148,9 +167,23 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend() {}
+    extend(config, { isClient, isDev }) {
+      if (isClient) {
+        config.node = {
+          fs: 'empty',
+          child_process: 'empty',
+          net: 'empty',
+          tls: 'empty'
+        };
+        if (isDev) {
+          config.module.rules.push({
+            enforce: 'pre',
+            test: /\.(ts|vue)$/,
+            loader: 'eslint-loader',
+            exclude: /(node_modules)/
+          });
+        }
+      }
+    }
   }
 };

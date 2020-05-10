@@ -1,0 +1,14 @@
+.title {
+  grid-area: title;
+  text-align: center;
+  margin-top: 15px;
+  h1 {
+    font: 50px/1 'Lobster', cursive;
+    @include text-shadow();
+    margin: 0;
+  }
+  h3 {
+    font: 13px/1.2 'Rock Salt', cursive;
+    margin: 8px;
+  }
+}

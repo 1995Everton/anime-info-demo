@@ -1,18 +1,25 @@
 <template>
-  <v-combobox
-    v-model="select"
-    :items="characters"
-    filled
-    label="Selecione o personagem"
-    @input="$emit('input', $event)"
-  >
-    <!-- <template v-slot:label>
-            <h3>Selecione o personagem</h3>
-        </template> -->
-    <template v-slot:selection="{ item }">
-      <h2>{{ item }}</h2>
-    </template>
-  </v-combobox>
+  <v-col cols="12" class="mb-5">
+    <v-row no-gutters justify="center" align="center">
+      <v-col cols="10" md="4">
+        <v-combobox
+          v-model="select"
+          class="mt-7"
+          :items="characters"
+          filled
+          :label="$t('input')"
+          @input="$emit('input', $event)"
+        >
+          <template v-slot:selection="{ item }">
+            <h2>{{ item }}</h2>
+          </template>
+        </v-combobox>
+      </v-col>
+      <v-col cols="10" md="4">
+        <a-button @click="$emit('search')"></a-button>
+      </v-col>
+    </v-row>
+  </v-col>
 </template>
 
 <script lang="ts">

@@ -1,0 +1,21 @@
+{
+  "search": "Buscar",
+  "input": "Selecciona el personaje",
+  "error-image": "Sin imagen",
+  "json": "Devolver JSON",
+  "loading": "Cargando...",
+  "above": "Acerca de",
+  "graduate": "Graduación",
+  "personal": "Informaciones personales",
+  "weight": "Peso",
+  "height": "Altura",
+  "age": "Edad",
+  "sex": "Género",
+  "registration": "Rango Ninja",
+  "status": "Estado",
+  "debut": "Estreno",
+  "clan": "Clan",
+  "classification": "Clasificación",
+  "affiliation": "Afiliación",
+  "partner": "Compañero"
+}

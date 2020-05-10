@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="href">
+  <nuxt-link :to="href" class="nuxt-link">
     <slot />
   </nuxt-link>
 </template>
@@ -15,5 +15,3 @@ export default Vue.extend({
   }
 });
 </script>
-
-<style lang="scss" scoped></style>
