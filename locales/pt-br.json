@@ -1,0 +1,21 @@
+{
+  "search": "Buscar",
+  "input": "Selecione o personagem",
+  "error-image": "Sem imagem",
+  "json": "JSON de retorno",
+  "loading": "Carregando...",
+  "above": "Sobre",
+  "graduate": "Graduação",
+  "personal": "Informações Pessoais",
+  "weight": "Peso",
+  "height": "Altura",
+  "age": "Idade",
+  "sex": "Sexo",
+  "registration": "Registro Ninja",
+  "status": "Estado",
+  "debut": "Estréia",
+  "clan": "Clã",
+  "classification": "Classificação",
+  "affiliation": "Afiliação",
+  "partner": "Parceiro"
+}

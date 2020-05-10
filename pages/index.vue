@@ -22,12 +22,18 @@
             ></a-title>
             <a-square-list :items="squares"></a-square-list>
             <a-notes
-              title="Sobre"
+              :title="$t('above')"
               :description="character.description"
             ></a-notes>
-            <a-person-list :items="person"></a-person-list>
+            <a-person-list
+              :title="$t('personal')"
+              :items="person"
+            ></a-person-list>
             <a-picture :items="character.photo"></a-picture>
-            <a-check-list title="Graduação" :items="graduations"></a-check-list>
+            <a-check-list
+              :title="$t('graduate')"
+              :items="graduations"
+            ></a-check-list>
             <a-states :states="databook"></a-states>
             <a-carousel title="Jutsus" :items="jutsus"></a-carousel>
           </a-notebook>
@@ -40,7 +46,6 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Naruto } from 'anime-info';
 import { NarutoData, States, NarutoInfo } from '~/models/naruto';
 import { Checklist, Squares, Person, GenericPhoto } from '~/models/global';
 
@@ -49,7 +54,6 @@ export default Vue.extend({
     select: 'Itachi Uchiha',
     error: false,
     loading: false,
-    photo_select: 0,
     characters: [],
     character: {}
   }),
@@ -72,8 +76,8 @@ export default Vue.extend({
       }
       return [
         {
-          name: 'Not Found',
-          icon: ''
+          name: this.$t('error-image') as string,
+          icon: this.$store.state.image
         }
       ];
     },
@@ -90,7 +94,7 @@ export default Vue.extend({
         } = this.character;
         if (debut && debut.manga && debut.anime) {
           squares.push({
-            title: 'Estréia',
+            title: this.$t('debut') as string,
             itens: [debut.manga, debut.anime]
           });
         }
@@ -100,7 +104,7 @@ export default Vue.extend({
             itens.push(cla.name);
           }
           squares.push({
-            title: 'Clã',
+            title: this.$t('clan') as string,
             itens
           });
         }
@@ -110,7 +114,7 @@ export default Vue.extend({
             itens.push(cla);
           }
           squares.push({
-            title: 'Classificação',
+            title: this.$t('classification') as string,
             itens
           });
         }
@@ -120,7 +124,7 @@ export default Vue.extend({
             itens.push(affi.name);
           }
           squares.push({
-            title: 'Afiliação',
+            title: this.$t('affiliation') as string,
             itens
           });
         }
@@ -140,7 +144,7 @@ export default Vue.extend({
             itens.push(partners);
           }
           squares.push({
-            title: 'Parceiros',
+            title: this.$t('partner') as string,
             itens
           });
         }
@@ -160,37 +164,37 @@ export default Vue.extend({
         } = this.character;
         if (Array.isArray(weight) && weight.length > 0) {
           person.push({
-            title: 'Peso',
+            title: this.$t('weight') as string,
             value: weight[weight.length - 1]
           });
         }
         if (Array.isArray(height) && height.length > 0) {
           person.push({
-            title: 'Altura',
+            title: this.$t('height') as string,
             value: height[height.length - 1]
           });
         }
         if (Array.isArray(age) && age.length > 0) {
           person.push({
-            title: 'Idade',
+            title: this.$t('age') as string,
             value: age[age.length - 1]
           });
         }
         if (sex) {
           person.push({
-            title: 'Sexo',
+            title: this.$t('sex') as string,
             value: sex
           });
         }
         if (ninja_registration) {
           person.push({
-            title: 'Registro Ninja',
+            title: this.$t('registration') as string,
             value: ninja_registration
           });
         }
         if (status) {
           person.push({
-            title: 'Estado',
+            title: this.$t('status') as string,
             value: status
           });
         }
@@ -222,7 +226,6 @@ export default Vue.extend({
       return graduations;
     },
     databook(): States[] {
-      // this.$store.commit('CHANGE_IMAGE', 'teste');
       return [
         {
           src: '/naruto/ninjutsu.png',
@@ -240,28 +243,32 @@ export default Vue.extend({
           points: 5
         }
       ];
+    },
+    lang(): string {
+      const locale = this.$i18n.getLocaleCookie();
+      return (locale === 'en' ? 'pt-br' : locale) as string;
     }
   },
   mounted() {
-    this.characters = this.getNames();
+    this.getNames();
     this.getCharacter();
   },
   methods: {
-    getNames(): string[] {
-      const naruto = new Naruto();
-      const character = naruto.getListCharacters() as string[];
-      return character.map((name) => name.replace(/_/g, ' '));
+    async getNames(): Promise<void> {
+      try {
+        const characters = await this.$axios.$get<string[]>(
+          '/naruto/character'
+        );
+        this.characters = characters.map((name) => name.replace(/_/g, ' '));
+      } catch (error) {}
     },
-    changePhoto(index: number): void {
-      this.photo_select = index;
-    },
-    async getCharacter(): Promise<any> {
+    async getCharacter(): Promise<void> {
       this.character = {};
       this.loading = true;
       this.error = false;
       try {
         this.character = await this.$axios.$get<NarutoInfo>(
-          `naruto/${this.select.replace(' ', '_')}`
+          `naruto/${this.lang}/${this.select.replace(' ', '_')}`
         );
       } catch (error) {
         this.error = true;

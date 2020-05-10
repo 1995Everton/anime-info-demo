@@ -1,7 +1,7 @@
 <template>
   <div class="btn-wrapper">
     <a class="cta" @click="$emit('click')">
-      <span>BUSCAR</span>
+      <span>{{ $t('search') }}</span>
       <span>
         <svg
           width="66px"

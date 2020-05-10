@@ -9,7 +9,7 @@
           :src="icon"
         >
           <v-overlay :absolute="true" :value="true">
-            <div class="subtitle carousel__title">{{ name }} Slide</div>
+            <div class="subtitle carousel__title">{{ name }}</div>
           </v-overlay>
         </v-carousel-item>
       </v-carousel>

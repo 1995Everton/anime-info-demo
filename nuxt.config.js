@@ -60,7 +60,26 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/dotenv'],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa',
+    '@nuxtjs/dotenv',
+    [
+      'nuxt-i18n',
+      {
+        locales: ['pt-br', 'en', 'es'],
+        defaultLocale: 'pt-br',
+        vueI18n: {
+          fallbackLocale: 'pt-br',
+          messages: {
+            en: require('./locales/en.json'),
+            es: require('./locales/es.json'),
+            'pt-br': require('./locales/pt-br.json')
+          }
+        }
+      }
+    ]
+  ],
   /*
    ** Axios module configuration
    */
@@ -148,7 +167,7 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    extend(config, { isClient }) {
+    extend(config, { isClient, isDev }) {
       if (isClient) {
         config.node = {
           fs: 'empty',
@@ -156,6 +175,14 @@ module.exports = {
           net: 'empty',
           tls: 'empty'
         };
+        if (isDev) {
+          config.module.rules.push({
+            enforce: 'pre',
+            test: /\.(ts|vue)$/,
+            loader: 'eslint-loader',
+            exclude: /(node_modules)/
+          });
+        }
       }
     }
   }

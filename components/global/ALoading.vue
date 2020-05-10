@@ -18,7 +18,7 @@
       <span></span>
       <span></span>
     </div>
-    <h1>Carregando...</h1>
+    <h1>{{ $t('loading') }}</h1>
   </div>
 </template>
 

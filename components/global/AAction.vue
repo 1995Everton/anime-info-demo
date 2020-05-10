@@ -7,7 +7,7 @@
           class="mt-7"
           :items="characters"
           filled
-          label="Selecione o personagem"
+          :label="$t('input')"
           @input="$emit('input', $event)"
         >
           <template v-slot:selection="{ item }">

@@ -15,7 +15,7 @@ export default Vue.extend({
     },
     subtitle: {
       type: String,
-      required: true
+      default: ''
     }
   }
 });
