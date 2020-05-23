@@ -1,14 +1,14 @@
 const colors = require('vuetify/es5/util/colors').default;
 require('dotenv').config();
 
-// const routerBase =
-//   process.env.DEPLOY_ENV === 'GH_PAGES'
-//     ? {
-//         router: {
-//           base: '/anime-info-demo/'
-//         }
-//       }
-//     : {};
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/anime-info-demo/'
+        }
+      }
+    : {};
 
 module.exports = {
   mode: 'spa',
@@ -28,7 +28,11 @@ module.exports = {
       }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/anime-info-demo/favicon.ico'
+      },
       {
         rel: 'stylesheet',
         href:
@@ -36,7 +40,7 @@ module.exports = {
       }
     ]
   },
-  // ...routerBase,
+  ...routerBase,
   /*
    ** Customize the progress-bar color
    */
