@@ -11,7 +11,7 @@
 
 ### 🏠 [anime-info](https://github.com/1995Everton/anime-info.git#readme)
 
-### ✨ [Demo](https://anime-info-demo.herokuapp.com/)
+### ✨ [Demo](https://1995everton.github.io/anime-info-demo/)
 
 ## 👉 Instalar Dependências
 
@@ -22,6 +22,8 @@ npm install
 ```sh
 npm run dev
 ```
+[http://localhost:3000/anime-info-demo/](http://localhost:3000/anime-info-demo/)
+
 ### 🐳 Docker (recomendado)
 ```sh
 docker-compose up

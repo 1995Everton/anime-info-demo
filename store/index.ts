@@ -1,7 +1,7 @@
 import { GetterTree, MutationTree } from 'vuex';
 
 export const state = () => ({
-  image: '/photo-not-found.gif',
+  image: '/anime-info-demo/photo-not-found.gif',
   locales: [
     { title: 'Português', lang: 'pt-br' },
     { title: 'Spanish', lang: 'es' },

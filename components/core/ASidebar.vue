@@ -30,22 +30,22 @@ export default Vue.extend({
       return [
         {
           title: 'Naruto',
-          icon: '/images/logo/icon-naruto.png',
+          icon: '/anime-info-demo/images/logo/icon-naruto.png',
           href: '/'
         },
         {
           title: 'Dragon Ball Z',
-          icon: '/images/logo/icon-dragonball.png',
+          icon: '/anime-info-demo/images/logo/icon-dragonball.png',
           href: '/'
         },
         {
           title: 'One Punch Man',
-          icon: '/images/logo/icon-onepunchman.png',
+          icon: '/anime-info-demo/images/logo/icon-onepunchman.png',
           href: '/'
         },
         {
           title: 'Hunter x Hunter',
-          icon: '/images/logo/icon-hunterxhunter.png',
+          icon: '/anime-info-demo/images/logo/icon-hunterxhunter.png',
           href: '/'
         }
       ];

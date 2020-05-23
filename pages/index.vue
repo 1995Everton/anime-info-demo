@@ -228,17 +228,17 @@ export default Vue.extend({
     databook(): States[] {
       return [
         {
-          src: '/naruto/ninjutsu.png',
+          src: '/anime-info-demo/naruto/ninjutsu.png',
           title: 'Ninjutsu',
           points: 3
         },
         {
-          src: '/naruto/taijutsu.png',
+          src: '/anime-info-demo/naruto/taijutsu.png',
           title: 'Taijutsu',
           points: 2
         },
         {
-          src: '/naruto/genjutsu.png',
+          src: '/anime-info-demo/naruto/genjutsu.png',
           title: 'Genjutsu',
           points: 5
         }
